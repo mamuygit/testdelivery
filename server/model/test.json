@@ -1,0 +1,12 @@
+[
+  {
+    "idFrom": "1",
+    "idTarget": "3",
+    "value": "1"
+  },
+  {
+    "fromTownId": "1",
+    "targetTownId": "4",
+    "costValue": "1"
+  }
+]

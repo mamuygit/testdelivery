@@ -1,8 +1,8 @@
-let routeController  = require('./route/controller');
-
-exports = module.exports = function initRoute(app) {
+exports = module.exports = function initRoute(app, path, pathString) {
     app.get('/', (req, res) => {
-        console.log(routeController);
-        res.json(routeController.getTown())
-      })
+        res.sendFile(path.join(pathString,'index.html'));
+    })
+    app.get('/match', (req, res) => {
+        res.sendFile(path.join(pathString, 'index.html'));
+    })
 }

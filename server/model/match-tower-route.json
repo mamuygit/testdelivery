@@ -1,7 +1,52 @@
 [
-    {
-        "idFrom": "1",
-        "idTarget": "3",
-        "value": "1"
-    }
+  {
+    "fromTownId": "1",
+    "targetTownId": "4",
+    "costValue": "10"
+  },
+  {
+    "fromTownId": "1",
+    "targetTownId": "2",
+    "costValue": "1"
+  },
+  {
+    "fromTownId": "1",
+    "targetTownId": "3",
+    "costValue": "4"
+  },
+  {
+    "fromTownId": "2",
+    "targetTownId": "5",
+    "costValue": "3"
+  },
+  {
+    "fromTownId": "3",
+    "targetTownId": "4",
+    "costValue": "4"
+  },
+  {
+    "fromTownId": "3",
+    "targetTownId": "6",
+    "costValue": "2"
+  },
+  {
+    "fromTownId": "4",
+    "targetTownId": "5",
+    "costValue": "1"
+  },
+  {
+    "fromTownId": "5",
+    "targetTownId": "2",
+    "costValue": "3"
+  },
+  {
+    "fromTownId": "5",
+    "targetTownId": "1",
+    "costValue": "2"
+  },
+  {
+    "fromTownId": "6",
+    "targetTownId": "4",
+    "costValue": "1"
+  }
 ]

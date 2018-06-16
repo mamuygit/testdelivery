@@ -53,10 +53,13 @@ export class MatchTownComponent implements OnInit {
                 targetTownId: this.selectedTargetValue,
                 costValue: form.value.costValue
             } 
-            console.log(req);
-            this.townService.postMaatchTown(req)
+            this.townService.postMatchTown(req)
                 .subscribe((response: any) => {
-                    console.log(response);
+                    if (response == null) {
+                        window.alert("Match Success!");
+                    } 
+                }, (err) => {
+                    window.alert("Duplicate!!!")
                 });
         }
     }

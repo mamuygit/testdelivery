@@ -4,6 +4,7 @@ import { Http } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { IGetTownResponse } from "../dto/get-town-response";
 import { IGetTargetTownForMatchRequest } from "../dto/get-target-for-match-request";
+import { IPostFindGoodRouteRequest } from "../dto/post-find-good-cost-request";
 
 @Injectable() export class TownService extends HttpService {
     constructor(http: Http) {
@@ -19,7 +20,11 @@ import { IGetTargetTownForMatchRequest } from "../dto/get-target-for-match-reque
     }
 
 
-    postMaatchTown(body: IGetTargetTownForMatchRequest): Observable<Array<IGetTownResponse>> {
+    postMatchTown(body: IGetTargetTownForMatchRequest): Observable<Array<IGetTownResponse>> {
         return this.sentRequest(`api/match-town`, body, 'POST');
+    }
+
+    postFindGoodRoute(body: IPostFindGoodRouteRequest): Observable<String> {
+        return this.sentRequest(`api/find-route-cost`, body, 'POST');
     }
 }

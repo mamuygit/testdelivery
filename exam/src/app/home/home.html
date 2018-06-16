@@ -1,1 +1,25 @@
 <h2>Home Component</h2>
+
+<select [ngModel]="selectedValue1" (change)="onChangeTargetTown1($event)">
+    <option value="default">Select Town</option>
+    <option *ngFor=" let town of towns" [value]="town.id">{{town.name}}</option>
+</select>
+
+<select [ngModel]="selectedValue2" (change)="onChangeTargetTown2($event)">
+    <option value="default">Select Town</option>
+    <option *ngFor=" let town of towns" [value]="town.id">{{town.name}}</option>
+</select>
+
+<select [ngModel]="selectedValue3" (change)="onChangeTargetTown3($event)">
+    <option value="default">None Select</option>
+    <option *ngFor=" let town of towns3" [value]="town.id">{{town.name}}</option>
+</select>
+
+<select [ngModel]="selectedValue4" (change)="onChangeTargetTown4($event)">
+    <option value="default">None Select</option>
+    <option *ngFor=" let town of towns4" [value]="town.id">{{town.name}}</option>
+</select>
+
+<form #f="ngForm" (ngSubmit)="onSubmitSubscribe(f)" novalidate="" class="form-inline form-subscribe justify-content-center justify-content-md-start">
+    <button type="submit" class="col-4 btn btn-primary ml-auto">Find Cost</button>
+</form>

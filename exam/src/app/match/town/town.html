@@ -1,0 +1,17 @@
+<h2>You can match Route between Town</h2>
+
+
+<select [ngModel]="selectedValue" (change)="onChangeCategorySelect($event)">
+    <option value="default">Select Town</option>
+    <option *ngFor=" let town of towns" [value]="town.id">{{town.name}}</option>
+</select>
+
+<select [ngModel]="selectedTargetValue" (change)="onChangeTargetTown($event)">
+    <option value="default">Select Town</option>
+    <option *ngFor=" let town of townsTarget" [value]="town.id">{{town.name}}</option>
+</select>
+
+<form #f="ngForm" (ngSubmit)="onSubmitSubscribe(f)" novalidate="" class="form-inline form-subscribe justify-content-center justify-content-md-start">
+    <input type="text" name="costValue" ngModel id="txtvalue" />
+    <button type="submit" class="col-4 btn btn-primary ml-auto">submit</button>
+</form>

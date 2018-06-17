@@ -17,7 +17,7 @@ export class Case2Component implements OnInit {
         private case2Service: Case2Service){
 
     }
-    choice: 1;
+    choice:number = 1;
     towns: Array<IGetTownResponse>;
     fromRoute: String = 'default';
     targetRoute: String = 'default';

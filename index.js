@@ -2,8 +2,8 @@ const express = require('express')
 const path = require('path')
 const serveStatic = require('serve-static')
 const compression = require('compression')
-const routes = require('./server/module/route-town/route')
-const rest = require('./server/module/front/route')
+const routes = require('./server/module/front/route')
+const routeTown = require('./server/module/route-town/route')
 const numberPossibleRoute = require('./server/module/num-possible-route/route')
 const costCheapestRoute = require('./server/module/cost-cheapest/route')
 const bodyParser = require('body-parser')
@@ -22,9 +22,9 @@ let pathString = path.join(__dirname, '/dist');
 let pathStringModel = path.join(__dirname, '/server/model');
 
 routes(app, path, pathString);
+routeTown(app, pathStringModel);
 numberPossibleRoute(app);
 costCheapestRoute(app)
-rest(app, pathStringModel);
 
 app.listen(3001, () => {
   console.log('Start server at port 3001.')

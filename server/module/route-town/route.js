@@ -1,5 +1,7 @@
-let routeController = require('./route/controller');
-console.log('APP:: REST router init.')
+let routeController = require('./controller');
+let handlerRoute = require('./../handler/handlerRouter');
+
+console.log('APP:: REST router route init.')
 
 exports = module.exports = function initRoute(app, pathStringModel) {
     
@@ -21,7 +23,7 @@ exports = module.exports = function initRoute(app, pathStringModel) {
         }
 
         if (!routeController.validateMatchTown(matchTownReq)) {
-            responseError(res, 'Error.');
+            handlerRoute.responseError(res, 'Error.');
             return false;
         } else {
             routeController.submitMatchTown(matchTownReq, pathStringModel);
@@ -30,7 +32,18 @@ exports = module.exports = function initRoute(app, pathStringModel) {
         res.status(201).json(null);
     })
 
-    function responseError(res, msg) {
-        res.status(409).send(msg);
-    } 
+    app.post('/api/find-route-cost', (req, res) => {
+        let findTown = {
+            targetTown1: req.body.targetTown1,
+            targetTown2: req.body.targetTown2,
+            targetTown3: req.body.targetTown3,
+            targetTown4: req.body.targetTown4
+        }
+        let objRouteResult = routeController.findCostRoute(findTown);
+        if (objRouteResult == -1) {
+            handlerRoute.responseError(res, 'No​ ​Such​ ​Route')
+            return false;
+        }
+        res.status(200).json(objRouteResult);
+    })
 }

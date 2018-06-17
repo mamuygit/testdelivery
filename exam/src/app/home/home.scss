@@ -1,0 +1,8 @@
+$border: 1px solid #000000;
+.result {
+    border: $border;
+
+    td {
+        border: $border;
+    }
+}

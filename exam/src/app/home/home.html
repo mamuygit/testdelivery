@@ -1,5 +1,8 @@
 <h2>Home Component</h2>
 
+<h4>Case1: ​​</h4>
+<p>​Calculate​ ​the​ ​delivery​ ​cost​ ​of​ ​the​ ​given​ ​delivery​ ​route.​ ​Follow​ ​the​ ​route​ ​as​ ​given;​
+​do not​ ​count​ ​any​ ​extra​ ​stops.​ ​In​ ​case​ ​given​ ​route​ ​is​ ​not​ ​exists,​ ​output​ ​’No​ ​Such​ ​Route’</p>
 <select [ngModel]="selectedValue1" (change)="onChangeTargetTown1($event)">
     <option value="default">Select Town</option>
     <option *ngFor=" let town of towns" [value]="town.id">{{town.name}}</option>
@@ -23,3 +26,21 @@
 <form #f="ngForm" (ngSubmit)="onSubmitSubscribe(f)" novalidate="" class="form-inline form-subscribe justify-content-center justify-content-md-start">
     <button type="submit" class="col-4 btn btn-primary ml-auto">Find Cost</button>
 </form>
+
+<h1 *ngIf="isNoResult">No Such Result</h1>
+<table class="result" *ngIf="!isNoResult && resultRouteCost && resultRouteCost.findRoutes"> 
+    <tr>
+        <td>From Town</td>
+        <td>Target Town</td>
+        <td>Cost</td>
+    </tr>
+    <tr *ngFor="let result of resultRouteCost.findRoutes">
+        <td>{{result.fromTown}}</td>
+        <td>{{result.targetTown}}</td>
+        <td>{{result.costValue}}</td>
+    </tr>
+    <tr>
+        <td colspan="2">total cost</td>
+        <td>{{resultRouteCost.totalCost}}</td>
+    </tr>
+</table>

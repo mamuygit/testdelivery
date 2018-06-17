@@ -8,11 +8,14 @@ import { MatchTownComponent } from './match/town/town';
 import { TownService } from './service/TownService';
 import { HttpModule } from '@angular/http'; 
 import { FormsModule } from '@angular/forms';
+import { Case2Component } from './case2/case2';
+import { Case2Service } from './service/Case2Service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    Case2Component,
     MatchTownComponent
   ],
   imports: [
@@ -21,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     appRoutes,
     FormsModule
   ],
-  providers: [TownService],
+  providers: [TownService, Case2Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

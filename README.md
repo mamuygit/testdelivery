@@ -3,7 +3,10 @@
 - clone this project
 - run with node index.js
 
--Command for Start project
-# npm run start. 
+# Make sure your laytop was install angular cli version 1.2.1
+- npm install -g @angular/cli@1.2.1
+
+#Command for Start project
+- npm run start. 
 
 # thanks

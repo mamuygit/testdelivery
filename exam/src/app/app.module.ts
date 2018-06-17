@@ -10,12 +10,15 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { Case2Component } from './case2/case2';
 import { Case2Service } from './service/Case2Service';
+import { Case3Service } from './service/Case3Service';
+import { Case3Component } from './case3/case3';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     Case2Component,
+    Case3Component,
     MatchTownComponent
   ],
   imports: [
@@ -24,7 +27,7 @@ import { Case2Service } from './service/Case2Service';
     appRoutes,
     FormsModule
   ],
-  providers: [TownService, Case2Service],
+  providers: [TownService, Case2Service, Case3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

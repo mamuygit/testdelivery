@@ -5,6 +5,7 @@ const compression = require('compression')
 const routes = require('./server/module/route-town/route')
 const rest = require('./server/module/front/route')
 const numberPossibleRoute = require('./server/module/num-possible-route/route')
+const costCheapestRoute = require('./server/module/cost-cheapest/route')
 const bodyParser = require('body-parser')
 var cors = require('cors')
 const app = express()
@@ -21,7 +22,8 @@ let pathString = path.join(__dirname, '/dist');
 let pathStringModel = path.join(__dirname, '/server/model');
 
 routes(app, path, pathString);
-numberPossibleRoute(app, path, pathString);
+numberPossibleRoute(app);
+costCheapestRoute(app)
 rest(app, pathStringModel);
 
 app.listen(3001, () => {

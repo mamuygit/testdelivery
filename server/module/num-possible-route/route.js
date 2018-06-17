@@ -1,10 +1,7 @@
-
-let handlerRoute = require('./../handler/handlerRouter');
 let controller = require('./controller')
-
 console.log('APP:: REST router Number of possuible route init.')
 
-exports = module.exports = function initRoute(app, pathStringModel) {
+exports = module.exports = function initRoute(app) {
 
     app.post('/api/find-number-route-maximum', (req, res) => {
         let fromTownId = req.body.fromTownId;

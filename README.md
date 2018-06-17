@@ -6,7 +6,7 @@
 # Make sure your laytop was install angular cli version 1.2.1
 - npm install -g @angular/cli@1.2.1
 
-#Command for Start project
+# Command for Start project
 - npm run start. 
 
 # thanks
